@@ -1,7 +1,8 @@
 # MaximTimohin_infra
 MaximTimohin Infra repository
 
-bastion_IP = 158.160.74.161   
+bastion_IP = 158.160.74.161
+
 someinternalhost_IP = 10.129.0.8
 
 Рализована связка в letsencrypt
@@ -77,10 +78,3 @@ Host database
     inet 10.129.0.8/24 brd 10.129.0.255 scope global eth0
        valid_lft forever preferred_lft forever
 ```
-
-
-
-
-
-
-
