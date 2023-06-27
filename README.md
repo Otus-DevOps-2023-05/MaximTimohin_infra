@@ -2,7 +2,6 @@
 MaximTimohin Infra repository
 
 bastion_IP = 158.160.74.161
-
 someinternalhost_IP = 10.129.0.8
 
 Рализована связка в letsencrypt
