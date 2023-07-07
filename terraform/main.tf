@@ -38,10 +38,10 @@ resource "yandex_compute_instance" "app" {
   }
 
   connection {
-    type = "ssh"
-    host = self.network_interface.0.nat_ip_address
-    user  = "ubuntu"
-    agent = false
+    type        = "ssh"
+    host        = self.network_interface.0.nat_ip_address
+    user        = "ubuntu"
+    agent       = false
     private_key = file("../../ssh/MaxOtus")
   }
 
