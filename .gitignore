@@ -11,4 +11,3 @@
 /terraform/terraform.tfstate.backup
 /terraform/terraform.tfvars
 /terraform/variables.tf
-/terraform/terraform.rc
