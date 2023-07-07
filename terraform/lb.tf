@@ -1,8 +1,8 @@
 resource "yandex_lb_network_load_balancer" "lb" {
-  name = "my-loadbalancer"
+  name = "reddit-loadbalancer"
 
   listener {
-    name        = "my-listener"
+    name        = "reddit-listener"
     port        = 80
     target_port = 9292
     protocol    = "tcp"
