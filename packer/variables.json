@@ -1,0 +1,8 @@
+{
+"HOME_DIR": "/home/maxim/otus_devops/otus_git/MaximTimohin_infra/",
+"SERVICE_ACCOUNT_KEY_FILE" : "/home/maxim/otus_devops/otus_git/ssh/key.json",
+"FOLDER_ID": "b1g1gfqikjnfrs5qp2kr",
+"SUBNET_ID": "e2l7ocm6180ll2nj6ue7",
+"SSH_USERNAME": "ubuntu",
+"ZONE": "ru-central1-b"
+}
