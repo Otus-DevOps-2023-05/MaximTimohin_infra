@@ -1,13 +1,12 @@
 terraform {
-  required_version = ">= 1.1.6"
+  required_version = ">= 0.13.0"
   required_providers {
     yandex = {
       source  = "yandex-cloud/yandex"
-      version = "0.87.0"
+      version = "0.94.0"
     }
   }
 }
-
 resource "yandex_compute_instance" "db" {
   name = "reddit-db"
   labels = {
