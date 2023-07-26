@@ -3,6 +3,7 @@
 *.tfstate.*.backup
 *.tfstate.backup
 *.tfvars
+.terraform
 /terraform/.terraform
 /terraform/terraform.key.json
 /terraform/terraform.tfstate
