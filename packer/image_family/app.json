@@ -1,0 +1,53 @@
+{
+    "builders": [
+        {
+            "type": "yandex",
+            "service_account_key_file": "{{user `SERVICE_ACCOUNT_KEY_FILE`}}",
+            "folder_id": "{{user `FOLDER_ID`}}",
+            "source_image_family": "ubuntu-1604-lts",
+            "image_name": "reddit-base-app-{{timestamp}}",
+            "image_family": "reddit-base",
+            "use_ipv4_nat": "true",
+            "subnet_id": "{{user `SUBNET_ID`}}",
+            "ssh_username": "{{user `SSH_USERNAME`}}",
+            "platform_id": "standard-v1",
+            "zone": "{{user `ZONE`}}"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "{{user `HOME_DIR`}}packer/scripts/install_ruby.sh",
+            "pause_before": "10s",
+            "execute_command": "sudo {{.Path}}"
+        },
+        {
+           "type": "shell",
+           "inline": [
+           "cd /home/{{user `SSH_USERNAME`}}",
+           "sudo apt install -y git nano",
+           "git clone -b monolith https://github.com/express42/reddit.git",
+           "cd reddit && bundle install"
+           ]
+        },
+        {
+          "type": "file",
+           "source": "{{user `HOME_DIR`}}packer/files/puma.service",
+           "destination": "/home/{{user `SSH_USERNAME`}}/puma.service"
+        },
+        {
+          "type": "file",
+           "source": "{{user `HOME_DIR`}}packer/files/puma.sh",
+           "destination": "/home/{{user `SSH_USERNAME`}}/puma.sh"
+        },
+        {
+           "type": "shell",
+           "inline": [
+           "cd /home/{{user `SSH_USERNAME`}}",
+           "chmod +x puma.sh",
+           "sudo mv /home/{{user `SSH_USERNAME`}}/puma.service /etc/systemd/system/",
+           "sudo systemctl enable puma.service"
+           ]
+        }
+    ]
+}

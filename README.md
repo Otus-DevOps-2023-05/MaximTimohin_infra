@@ -6,6 +6,7 @@ MaximTimohin Infra repository
  - Создал LoadBalancer.
  - Протестировал доступность при отключении одного из instance.
 
+
 #####
  - Выполнил основное задание
 При выполнении команды
@@ -13,3 +14,8 @@ MaximTimohin Infra repository
 ansible app -m command -a 'rm -rf ~/reddit'
 ```
 удалился каталог reddit, повторное выполнение clone.yml повторно его создало
+=======
+##### Terraform - 2
+ - Выполнено основное задание
+ - Выполнено задание со *
+
