@@ -11,4 +11,8 @@
 /terraform/variables.tf
 .terraform/
 .terraform.lock.hcl
-
+*.terraform.lock.hcl
+*.terraform.key.json
+/terraform/stage/.terraform.key.json
+/terraform/prod/.terraform.key.json
+*.retry
