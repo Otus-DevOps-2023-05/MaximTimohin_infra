@@ -1,6 +1,6 @@
 ---
 - name: Install MongoDB 4.2
-  hosts: all
+  hosts: db
   become: true
   tasks:
   # Добавим ключ репозитория для последующей работы с ним
