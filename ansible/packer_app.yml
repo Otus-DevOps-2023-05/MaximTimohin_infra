@@ -1,0 +1,17 @@
+---
+- name: Install Ruby && Bundler
+  hosts: all
+  become: true
+  tasks:
+  # Установим в цикле все зависимости
+  - name: Pause for 5 minutes to build app cache
+    ansible.builtin.pause:
+      seconds: 15
+
+  - name: Install ruby and rubygems and required packages
+    apt: "name={{ item }} state=present"
+    with_items:
+      - ruby-full
+      - ruby-bundler
+      - build-essential
+      - git

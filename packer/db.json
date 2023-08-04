@@ -15,11 +15,10 @@
         }
     ],
     "provisioners": [
-        {
-            "type": "shell",
-            "script": "{{user `HOME_DIR`}}scripts/install_mongodb.sh",
-            "pause_before": "10s",
-            "execute_command": "sudo {{.Path}}"
-        }
+       {
+            "type": "ansible",
+            "user": "ubuntu",
+            "playbook_file": "ansible/packer_db.yml"
+       }
     ]
 }
