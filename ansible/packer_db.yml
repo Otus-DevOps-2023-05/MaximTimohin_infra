@@ -4,14 +4,15 @@
   become: true
   tasks:
   # Добавим ключ репозитория для последующей работы с ним
-  - name: Add an Apt signing key
-    ansible.builtin.apt_key:
-      url: https://www.mongodb.org/static/pgp/server-4.2.asc
-      state: present
+  - name: Add APT key
+    apt_key:
+      id: EA312927
+      keyserver: keyserver.ubuntu.com
+
   # Подключаем репозиторий с пакетами mongodb
   - name: Add APT repository
     apt_repository:
-      repo: deb [ arch=amd64] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse
+      repo: deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse
       state: present
 
   # Выполним установку пакета
