@@ -3,8 +3,7 @@
   hosts: app
   become: true
   tasks:
-  # Установим в цикле все зависимости
-  - name: Pause for 5 minutes to build app cache
+  - name: Pause for 15 seconds to build app cache
     ansible.builtin.pause:
       seconds: 15
 
