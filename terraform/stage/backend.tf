@@ -4,8 +4,8 @@ terraform {
     bucket   = "otus-devops-reddit-busket"
     region   = "ru-central1"
     key      = "stage/terraform.tfstate"
-    access_key = "YCAJEf6wHRgl1sTEcaFRiWS2b"
-    secret_key = "YCN1QFyhubLKnsW5xirEk_358fTZ425tH4G9Lr9H"
+    access_key = "YCAJEnEEavrUVZK9X_fsoEE"
+    secret_key = "YCMQ2pUZLuyKR01IP-wz6F7le66tfPqNB5i153"
     skip_region_validation      = true
     skip_credentials_validation = true
   }

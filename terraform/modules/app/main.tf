@@ -16,9 +16,11 @@ resource "yandex_compute_instance" "app" {
   resources {
     cores  = 2
     memory = 2
-    core_fraction = 20
+    core_fraction = 5
   }
-
+  scheduling_policy {
+    preemptible = true
+  }
   boot_disk {
     initialize_params {
       image_id = var.app_disk_image
